@@ -9,7 +9,7 @@ public class Belanja {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		int uang = 5000; //inputan
+		int uang = 10000; //inputan
 		
 		List<String> belanja = new ArrayList<>();  //menyimplan belanja
 		
