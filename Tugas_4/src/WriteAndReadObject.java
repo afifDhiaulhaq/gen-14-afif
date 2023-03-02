@@ -23,7 +23,7 @@ public class WriteAndReadObject {
 		List<Barang> barang = new ArrayList<>();
 		
 		barang.add(new Barang("Oreo",5000,10));
-		barang.add(new Barang("Ultra",6000,11));
+		barang.add(new Barang("Ultra",6000,12));
 		barang.add(new Barang("SilverQueen",15000,20));
 		barang.add(new Barang("Pocky",8000,30));
 
