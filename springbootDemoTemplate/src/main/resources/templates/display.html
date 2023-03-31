@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Company</title>
+
+<!-- Google Font: Source Sans Pro -->
+<link rel="stylesheet"
+	href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+<!-- Font Awesome -->
+<link rel="stylesheet"
+	th:href="@{plugins/fontawesome-free/css/all.min.css}">
+<!-- Theme style -->
+<link rel="stylesheet" th:href="@{css/adminlte.min.css}">
+<link rel="stylesheet" th:href="@{css/adminlte.css}">
+
+
+</head>
+<body class="hold-transition sidebar-mini">
+	<!-- Site wrapper -->
+	<div class="wrapper">
+
+
+		<!-- Main Sidebar Container -->
+		<sidebar th:replace="/fragments/template :: sidebar" />
+		<!-- Navbar -->
+		<nav th:replace="/fragments/template :: nav" />
+
+
+
+		<!-- Content Wrapper. Contains page content -->
+		<div class="content-wrapper">
+			<!-- Content Header (Page header) -->
+			<section class="content-header">
+				<div class="container-fluid">
+					<div class="row mb-2">
+						<div class="col-sm-6">
+							<h1>List Company</h1>
+						</div>
+					</div>
+				</div>
+				<!-- /.container-fluid -->
+			</section>
+
+			<!-- Main content -->
+			<section class="content">
+				<!-- add button  -->
+				<button type="button" class="btn btn-primary" data-toggle="modal"
+					data-target="#exampleModal">Add Company +</button>
+				<!-- Table -->
+				<div class="row">
+					<div class="col-12">
+						<div class="card">
+							<div class="card-header">
+								<h3 class="card-title">Responsive Hover Table</h3>
+
+								<div class="card-tools">
+									<div class="input-group input-group-sm" style="width: 150px;">
+										<form class="d-flex" role="search" th:action="@{/search}"
+											method="get">
+											<input type="text" name="keyword" th:value="${keyword}"
+												class="form-control float-right" placeholder="Search" id="search">
+
+											<div class="input-group-append">
+												<button type="submit" class="btn btn-default">
+													<i class="fas fa-search"></i>
+												</button>
+											</div>
+										</form>
+
+									</div>
+								</div>
+							</div>
+							<!-- /.card-header -->
+							<div class="card-body table-responsive p-0">
+								<table class="table table-hover text-nowrap">
+									<thead>
+										<tr>
+											<th>ID</th>
+											<th>Name</th>
+											<th>Action</th>
+										</tr>
+									</thead>
+								</table>
+							</div>
+							<!-- /.card-body -->
+						</div>
+						<!-- /.card -->
+					</div>
+				</div>
+				<!-- /.row -->
+			</section>
+			<!-- /.content -->
+
+		</div>
+		<!-- /.content-wrapper -->
+
+		<!-- Modal  -->
+		<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+			aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="exampleModalLabel">Add Company</h5>
+						<button type="button" class="close" data-dismiss="modal"
+							aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">
+						<div id='msg' />
+						<h3>Add a New Company</h3>
+
+						<div class="mb-3">
+							<label for="exampleInputEmail1" class="form-label">Name</label> <input
+								type="text" class="form-control" aria-describedby="emailHelp"
+								id="name" name="name">
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary"
+							data-dismiss="modal">Close</button>
+						<button type="submit" id="addNew" class="btn btn-primary">Submit</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Footer -->
+	<nav th:replace="/fragments/template :: footer" />
+
+
+	<!-- Control Sidebar -->
+	<aside class="control-sidebar control-sidebar-dark">
+		<!-- Control sidebar content goes here -->
+	</aside>
+	<!-- /.control-sidebar -->
+	<!-- ./wrapper -->
+
+	<!-- jQuery -->
+	<script th:src="@{plugins/jquery/jquery.min.js}"></script>
+	<script type="text/javascript" th:src="@{js/script.js}"></script>
+	<!-- Bootstrap 4 -->
+	<script th:src="@{plugins/bootstrap/js/bootstrap.bundle.min.js}"></script>
+	<!-- AdminLTE App -->
+	<script th:src="@{js/adminlte.min.js}"></script>
+	<!-- AdminLTE for demo purposes -->
+	<script th:src="@{js/demo.js}"></script>
+</body>
+</html>
